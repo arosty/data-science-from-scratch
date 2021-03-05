@@ -164,7 +164,7 @@ def page_rank(users: List[User],
               damping: float = 0.85,
               num_iters: int = 100) -> Dict[int, float]:
     # Compute how many people each person endorses
-    outgoing_counts = Counter(target for source, target in endorsements)
+    outgoing_counts = Counter(source for source, target in endorsements)
 
     # Initially distribute PageRank evenly
     num_users = len(users)
